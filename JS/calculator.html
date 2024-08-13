@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            color: violet;
+            font-weight: bolder;
+        }
+        h1:hover{
+            color: chocolate;
+        }
+        button{
+            background-color:teal;
+        }
+        button:hover{
+            background-color:whitesmoke ;
+        }
+        #result{
+            color:orangered;
+            font-size: xx-large;
+            font-weight: bolder;
+        }
+        #result:hover{
+            color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heading"> <h1>Calculator App</h1></div>
+    </div>
+    <div class="main">
+        <label for="first_num">Enter number:</label>
+        <input type="text" id="first_num" placeholder="Enter number:"><br>
+        <label for="second_num">Enter number:</label>
+        <input type="text" id="second_num" placeholder="Enter number:"><br>
+        <button id = "add">Add</button><br>
+        <button id = "sub">Subtract</button><br>
+        <button id = "mul">Multiplication</button><br>
+        <button id = "div">Division</button>
+
+    </div>
+   
+   
+    <h2 id="result">Result:</h2>
+    
+
+    
+</body>
+<script>
+    //query Selector 
+    document.getElementById("add").addEventListener("click",add);
+    document.getElementById("sub").addEventListener("click",sub);
+    document.getElementById("mul").addEventListener("click",mul);
+    document.getElementById("div").addEventListener("click",div);
+   
+
+    function add(){
+        var num1 = parseInt(document.getElementById("first_num").value);
+        var num2 = parseInt(document.getElementById("second_num").value);
+        var res = num1 + num2;
+        document.getElementById("result").innerHTML = res;
+
+    }
+    function sub(){
+        var num1 = parseInt(document.getElementById("first_num").value);
+        var num2 = parseInt(document.getElementById("second_num").value);
+        var res = num1 - num2;
+        document.getElementById("result").innerHTML = res;
+
+    }
+    function mul(){
+        var num1 = parseInt(document.getElementById("first_num").value);
+        var num2 = parseInt(document.getElementById("second_num").value);
+        var res = num1 * num2;
+        document.getElementById("result").innerHTML = res;
+
+    }
+    function div(){
+        var num1 = parseInt(document.getElementById("first_num").value);
+        var num2 = parseInt(document.getElementById("second_num").value);
+        var res = num1 / num2;
+        document.getElementById("result").innerHTML = res;
+
+    }
+</script>
+</html>

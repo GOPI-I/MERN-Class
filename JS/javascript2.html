@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            font-size: large;
+            font-weight: bolder;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: violet;
+        }
+        button{
+            background-color: tomato;
+        }
+        h2{
+
+        }
+    </style>
+   
+</head>
+<body>
+    <h1 id="heading"> Hi hello everyone </h1>
+    <input type="text" id = "input_txt"/><br><br>    
+    <button type="submit" onclick="myfun()">Fake me</button>
+    <button type="submit" onclick="changeText()">Real Name</button>
+    <h2 id = "result" >Result:</h2>
+</body>
+<script>
+    // function myfun(){
+    //     var res = "im madan gowri";
+    //     document.getElementById("result").innerHTML = res;
+
+    // }
+    // function myfun1(){
+    //     var res = "Akash Pandiya"
+    //     document.getElementById("result").innerHTML = res;
+    // }
+    function changeText(){
+        let val = document.getElementById("input_txt").value;
+        if (val == ""){
+            alert("please enter any value");
+        }else{
+             document.getElementById("result").innerHTML = val;
+
+        }
+       
+    }
+    
+
+</script>
+</html>
