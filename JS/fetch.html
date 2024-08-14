@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="getApi()">Click me</button>
+    <button onclick="post()">Post</button>
+    <h1 id="res"></h1>
+    <h1 id="json"></h1>
+</body>
+<script>
+    async function getApi() {
+        let res = await fetch("https://reqres.in/api/users",{"method":"GET"});
+        document.getElementById("res").innerHTML = res["status"];
+        let json = res.json();
+        document.getElementById("json").innerHTML = json;
+     console.log(res);
+    }
+    async function post() {
+        let res = await fetch("https://reqres.in/api/users",{"method":"POST",body:JSON.stringify(data),});
+        let json = await res.json();
+        console.log(res);
+    }
+</script>
+     
+</html>

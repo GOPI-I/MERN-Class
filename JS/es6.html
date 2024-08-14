@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txt">
+    <button id="remo">Click me</button>
+    <h1>which course you want ?</h1>
+    <select  id="options">
+        <option value="MCA">MCA</option>
+        <option value="M.COM">M.COM</option>
+        <option value="MSW">MSW</option>
+        <option value="MSE">MSE</option>
+    </select>
+    <h1 id="result">Result</h1>
+    
+</body>
+<script>
+    document.getElementById('options').addEventListener('click',()=>{
+        let val = document.getElementById("options").value;
+        document.getElementById("result").innerHTML = val;
+    })
+    // document.getElementById('options').addEventListener('click',(e)=>{
+    //     let val = document.getElementById("options").value;
+    //     console.log(e.target.value);
+    // })
+</script>
+</html>

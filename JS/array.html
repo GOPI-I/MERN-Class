@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            color: #C724B1;
+        }
+        h1:hover{
+            color: #FFF01F;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="input_id">
+    <h1 id="h1_id">Hello JS</h1>
+    <input type="button" onclick="changeText()" value="Print">
+    <h1 id="result"></h1>
+</body>
+<script>
+    function changeText() {
+        if (document.getElementById("input_id").value === "") {
+            document.getElementById("h1_id").innerHTML = "Null value";
+        } else {
+            document.getElementById("h1_id").innerHTML = document.getElementById("input_id").value;
+        }
+    }
+    let name = ["akash","pandiya","gunasekar","silpha"];
+    console.log(name);
+    console.log(name.length);
+    console.log(name[2])
+    name.push("senthil");
+    name.unshift("rajan");
+    name[4] = "kuamri";
+    console.log(name);
+    for(let i in name){
+        if(name[i].startsWith("g")){
+            console.log(i,name[i]);
+        }
+    }
+
+    var num = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+    let afterfilter = num.filter((i)=>{return i%2==0});
+    console.log(afterfilter);
+    
+    var nummap = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+    var newArray = nummap.map((i)=>i*2);
+    console.log(newArray);
+    let combine = num.filter((i)=>{return i%2 == 0}).map((i)=>{return i*2});
+    document.getElementById("result").innerHTML = combine;
+
+
+</script>
+</html>

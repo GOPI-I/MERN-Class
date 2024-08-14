@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        button{
+            background-color: #7209B7;
+            width: 100px;
+            height: 25px;
+            color: whitesmoke;
+            display: flex;
+            margin: 20px;
+            border:3px solid #FF004D;
+            border-radius: 50px;
+
+        }
+        button:hover{
+            background-color: chocolate;
+            width: 100px;
+            height: 55px;
+            justify-content: center;
+            align-items: center;
+            border: 7px double green;
+        }
+    </style>
+  </head>
+  <body>
+    <input type="text" placeholder="enter username"/><br><br>
+    <input type="text" placeholder="enter password"/>
+    <button onclick="getApi()">GET</button>
+    <button onclick="fetchPost()">POST</button>
+    <h2 id="res"></h2>
+  </body>
+  <script>
+    async function getApi() {
+      let res = await fetch("https://reqres.in/api/users/2", { method: "GET" });
+      let json = await res.json();
+      console.log(json);
+
+      document.getElementById("res").innerHTML = "status: " + res["status"];
+    }
+    async function fetchPost() {
+      let data = {
+    "email": "eve.holt@reqres.in",
+    "password": "cityslicka"
+};
+      let res = await fetch("https://reqres.in/api/users", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: { "content-type": "application/json" },
+      });
+      let json = await res.json();
+      console.log(json);
+
+      document.getElementById("res").innerHTML = "status: " + res["status"];
+    }
+  </script>
+</html>
