@@ -26,23 +26,41 @@
         #result:hover{
             color: skyblue;
         }
+        html,body{
+            align-items: center;
+        }
+        html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    border: 2px solid black;
+    width: fit-content;
+    padding: 20px; /* Optional: Adds some space around the content */
+}
+
+
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="heading"> <h1>Calculator App</h1></div>
-    </div>
-    <div class="main">
-        <label for="first_num">Enter number:</label>
-        <input type="text" id="first_num" placeholder="Enter number:"><br>
-        <label for="second_num">Enter number:</label>
-        <input type="text" id="second_num" placeholder="Enter number:"><br>
-        <button id = "add">Add</button><br>
-        <button id = "sub">Subtract</button><br>
-        <button id = "mul">Multiplication</button><br>
-        <button id = "div">Division</button>
-
-    </div>
+        <div class="main">
+            <label for="first_num">Enter number:</label>
+            <input type="text" id="first_num" placeholder="Enter number:"><br>
+            <label for="second_num">Enter number:</label>
+            <input type="text" id="second_num" placeholder="Enter number:"><br>
+            <button id = "add">Add</button><br>
+            <button id = "sub">Subtract</button><br>
+            <button id = "mul">Multiplication</button><br>
+            <button id = "div">Division</button>
+    
+        </div>
+    </div><br>
+    
    
    
     <h2 id="result">Result:</h2>
