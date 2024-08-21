@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        key and value
+        key should be unique
+        */ 
+
+    //     let person = [{
+    //         "name" : "akash",
+    //         "mobile" : 6381256044,
+    //         "address" :"saidapet",
+    //         "email" : "igopi170@gmail.com"
+    //     },
+    //     {
+    //         "name" : "virat",
+    //         "mobile" : 6945635463,
+    //         "address" : "velacherry"
+    //     },{
+    //         "name" : "delhiBabu",
+    //         "mobile" : 654646466,
+    //         "address" : "guindy"
+    //     }
+    // ];
+    //     console.log(person['name']);
+    //     console.log(person['email']);
+    //     console.log(person[1] ['address']);
+    //     console.log(person[2]['mobile']);
+
+    //     for(i in person){
+    //         console.log(person[i]['name']);
+    //     }
+    async function getUserList() {
+        let res = await fetch("https://reqres.in/api/users?page=2",
+            {"method" : "GET"}
+        );
+        let json = await res.json();
+        for(let index in json['data']){
+            console.log(json['data'][index]['first_name']);
+            console.log(json['data'][index]['email']);
+            console.log(json['data'][index]['avatar']);
+
+        }
+    }
+    getUserList();
+
+    </script>
+</body>
+</html>
