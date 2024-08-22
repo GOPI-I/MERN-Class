@@ -1,14 +1,15 @@
-import logo from './one.jpg'
+
 import './App.css';
+import Gome from './Gome';
+import Login from './Login';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>This is react app</h1>
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
-    </div>
+  
+  return (<>
+    {/* <Gome/> */}
+    <Login/>
+    </>
   );
 }
 
