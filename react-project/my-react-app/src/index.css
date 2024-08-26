@@ -1,4 +1,4 @@
-body{
+/* body{
   background-image: url(assets/fjfjf.jpg);
   background-position: center;
   background-repeat: no-repeat;
@@ -6,7 +6,7 @@ body{
   background-attachment: fixed;
   margin: 0;
 
-}
+} */
 .card{
   border: 1px solid red;
   border-radius: 20px;
@@ -223,4 +223,7 @@ body{
   font-family: monospace;
   text-align: center;
   text-shadow: 3px 3px 5px hsla(0, 0%, 0%, 0.705);
+}.box{
+  border: 3px solid;
+  padding: 25px;
 }

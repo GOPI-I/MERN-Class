@@ -19,12 +19,15 @@ import ToDoList from "./ToDoList.jsx";
 import Component from "./UseEffectPro.jsx";
 import Display from "./Width-Height.jsx";
 import DigitalClock from "./DigitalClock.jsx";
+import ComponentA from "./ComponentA.jsx";
+import React from "react";
 
 function App() {
   return(
     
     <>
-    <DigitalClock/>
+    <ComponentA/>
+    {/* <DigitalClock/> */}
     {/* <Display/> */}
     {/* <Component/> */}
     {/* <ToDoList/> */}
