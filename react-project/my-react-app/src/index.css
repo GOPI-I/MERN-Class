@@ -1,4 +1,12 @@
+body{
+  background-image: url(assets/fjfjf.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
 
+}
 .card{
   border: 1px solid red;
   border-radius: 20px;
@@ -199,4 +207,20 @@
 .delete-button , .move-button{
   padding: 8px 12px;
   font-size: 1.4rem;margin-left: 10px;
+}
+.clock-container{
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  align-items: center;
+  backdrop-filter: blur(5px);
+ 
+}
+.clock{
+  color: wheat;
+  font-size: 6rem;
+  font-weight: bolder;
+  font-family: monospace;
+  text-align: center;
+  text-shadow: 3px 3px 5px hsla(0, 0%, 0%, 0.705);
 }

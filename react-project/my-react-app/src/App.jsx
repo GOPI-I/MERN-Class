@@ -18,12 +18,14 @@ import CarArray from "./CarArray.jsx";
 import ToDoList from "./ToDoList.jsx";
 import Component from "./UseEffectPro.jsx";
 import Display from "./Width-Height.jsx";
+import DigitalClock from "./DigitalClock.jsx";
 
 function App() {
   return(
     
     <>
-    <Display/>
+    <DigitalClock/>
+    {/* <Display/> */}
     {/* <Component/> */}
     {/* <ToDoList/> */}
     {/* <CarArray/> */}
