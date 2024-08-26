@@ -16,12 +16,16 @@ import Car from "./CarUseState.jsx";
 import ArrayFood from "./Array.jsx";
 import CarArray from "./CarArray.jsx";
 import ToDoList from "./ToDoList.jsx";
+import Component from "./UseEffectPro.jsx";
+import Display from "./Width-Height.jsx";
 
 function App() {
   return(
     
     <>
-    <ToDoList/>
+    <Display/>
+    {/* <Component/> */}
+    {/* <ToDoList/> */}
     {/* <CarArray/> */}
     {/* <ArrayFood/> */}
     {/* <Car/> */}
