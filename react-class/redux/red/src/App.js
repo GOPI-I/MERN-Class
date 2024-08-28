@@ -4,6 +4,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './Home';
 import About from './About';
 import Contact from './Contact';
+import {Provider} from 'react-redux'
+import { myStore } from './redux/config';
 import Header from './Header';
 
 let routerPaths = createBrowserRouter([
@@ -16,13 +18,20 @@ let routerPaths = createBrowserRouter([
 ])
 function App() {
   return (
-    <div>
-      <Header/>
-      <RouterProvider router={routerPaths} />
+   
+      <Provider store={myStore}>
+        <div className='App'>
+          <RouterProvider router={routerPaths}/>
+          
+        </div>
+      </Provider>
+     
+      
+      // {/* <Header/>
+      // <RouterProvider router={routerPaths} /> */}
       
   
-  
-    </div>
+
   );
 }
 
