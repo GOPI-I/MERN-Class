@@ -1,33 +1,34 @@
-import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import Header from './Header';
 
 const Home = () => {
-const counterVal = useSelector((state) => state.counter);
-const dispathch = useDispatch();
-  const add =() =>{
-    dispathch({
-      type : "add"
-    });
+    const counterVal = useSelector((state) => state.counter);
+    const dispatch = useDispatch();
 
-  }
-  const sub =() => {
-    dispathch({
-      type : "sub"
-    });
+    const add = () => {
+        dispatch({ type: 'add' });     };
 
-  }
-  return (
-    <div>Home<br/>
-      <input type='button' value="Add" onClick={add}/>
-      <input type='button' value="Sub" onClick={sub}/>
-      <h1>{counterVal}</h1>
+    const sub = () => {
+        dispatch({ type: 'sub' }); 
+    };
+    const saveDetails =() =>{
+        dispatch({
+            type:'saveDetails',
+            data:{"name":"Gopi","email":"igopi170@"}
+        })
+    }
 
+    return (
+        <div>
+            <Header/>
+            <h1>{counterVal}</h1><br />
+            <input type="button" value="Add" onClick={add} /> 
+            <input type="button" value="Sub" onClick={sub} /> <br></br>
+            
+           <input type='submit' value="savemydetails" onClick={saveDetails}/>
+        </div>
+    );
+};
 
-
-
-    </div>
-    
-  )
-}
-
-export default Home
+export default Home;
