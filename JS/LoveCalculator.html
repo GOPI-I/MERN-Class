@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: linen;
+        }
+        #result{
+            text-align: center;
+            color: orangered;
+            font-size: xx-large;
+            font-weight: bolder;
+            font-family: serif;        
+        }
+        p{
+            color: purple;
+            font-size: medium;
+            font-family: monospace;
+
+        }
+
+    </style>
+</head>
+<body>
+    <h1 id="result">Love percentage :  </h1><br/>
+    <p>Love is beatuiful for some people and some it is worst ...</p>
+
+    <input type = "text" placeholder="enter your name"/>
+    <input type="text" placeholder="Enter your crush name"/>
+    <button type="button" onclick="love()">check</button>
+    
+    
+</body>
+<script>
+    const percent = Math.floor(Math.random()* 100 ) + 1;
+
+    function love() {
+        const percent = Math.floor(Math.random()* 100 ) + 1;
+
+        if(percent > 80){
+            document.getElementById("result").innerHTML = percent + "%" + "💞";
+
+        }
+        else if(percent > 30){
+            document.getElementById("result").innerHTML = percent + "%" + "💘";
+
+        }
+        else{
+            document.getElementById("result").innerHTML = percent + "%" + "💔";
+        }
+        
+   
+
+    }
+</script>
+</html>
