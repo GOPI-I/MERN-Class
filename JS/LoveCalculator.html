@@ -3,57 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Love Percentage Calculator</title>
     <style>
-        body{
+        body {
             background-color: linen;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        #result{
-            text-align: center;
+        #result {
+            position: absolute;
+            top: 30px;
             color: orangered;
-            font-size: xx-large;
-            font-weight: bolder;
-            font-family: serif;        
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            width: 100%;
         }
-        p{
+        .container {
+            text-align: center;
+            border: 3px solid orangered;
+            padding: 30px 20px;
+            border-radius: 20px;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            animation: love-animation 1.5s infinite;
+            max-width: 300px;
+            width: 100%;
+        }
+        p {
             color: purple;
-            font-size: medium;
-            font-family: monospace;
-
+            font-size: 1rem;
+            margin: 15px 0;
         }
-
+        input {
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 1rem;
+            border: 2px solid orangered;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 12px;
+            font-size: 1rem;
+            color: white;
+            background-color: orangered;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button:hover {
+            background-color: darkred;
+        }
+        @keyframes love-animation {
+            0% {transform: scale(1);}
+            50% {transform: scale(1.05);}
+            100% {transform: scale(1);}
+        }
     </style>
 </head>
 <body>
-    <h1 id="result">Love percentage :  </h1><br/>
-    <p>Love is beatuiful for some people and some it is worst ...</p>
+    <h1 id="result">Love percentage :</h1>
+    
+    <div class="container">
+        <input type="text" id="yourName" placeholder="Enter your name"/><br/>
+        <input type="text" id="crushName" placeholder="Enter your crush's name"/><br/>
+        <button type="button" onclick="love()">Check</button>
+    </div>
 
-    <input type = "text" placeholder="enter your name"/>
-    <input type="text" placeholder="Enter your crush name"/>
-    <button type="button" onclick="love()">check</button>
-    
-    
+    <!-- Hidden audio elements -->
+    <audio id="sadSong" src="appu_raja_flute.mp3"></audio>
+    <audio id="mdLove" src="ya.mp3"></audio>
+    <audio id="stLove" src="en.mp3"></audio>
 </body>
 <script>
-    const percent = Math.floor(Math.random()* 100 ) + 1;
+    let currentSong = null; // Track the currently playing song
 
     function love() {
-        const percent = Math.floor(Math.random()* 100 ) + 1;
+        const yourName = document.getElementById('yourName').value.trim();
+        const crushName = document.getElementById('crushName').value.trim();
+        const namePattern = /^[A-Za-z]+$/; // Regular expression to check only alphabetic characters
 
-        if(percent > 80){
-            document.getElementById("result").innerHTML = percent + "%" + "💞";
+        if (yourName && crushName) {
+            if (namePattern.test(yourName) && namePattern.test(crushName)) {
+                const percent = Math.floor(Math.random() * 100) + 1;
 
+                // Stop the currently playing song if there is one
+                if (currentSong) {
+                    currentSong.pause();
+                    currentSong.currentTime = 0; // Reset the song to the beginning
+                }
+
+                if (percent > 80) {
+                    document.getElementById("result").innerHTML = percent + "%" + " 💞";
+                    currentSong = document.getElementById("stLove"); // Set the current song
+                } else if (percent > 30) {
+                    document.getElementById("result").innerHTML = percent + "%" + " 💘";
+                    currentSong = document.getElementById("mdLove"); // Set the current song
+                } else {
+                    document.getElementById("result").innerHTML = percent + "%" + " 💔";
+                    currentSong = document.getElementById("sadSong"); // Set the current song
+                }
+
+                // Play the selected song
+                currentSong.play();
+            } else {
+                document.getElementById("result").innerHTML = "Please enter only alphabetic characters!";
+            }
+        } else {
+            document.getElementById("result").innerHTML = "Please enter both names!";
         }
-        else if(percent > 30){
-            document.getElementById("result").innerHTML = percent + "%" + "💘";
-
-        }
-        else{
-            document.getElementById("result").innerHTML = percent + "%" + "💔";
-        }
-        
-   
-
     }
 </script>
 </html>
